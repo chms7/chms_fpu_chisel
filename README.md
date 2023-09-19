@@ -1,37 +1,21 @@
-Chisel Project Template
-=======================
+# chms_fpu_chisel
 
-Another version of the [Chisel template](https://github.com/ucb-bar/chisel-template) supporting mill.
-mill is another Scala/Java build tool without obscure DSL like SBT. It is much faster than SBT.
+> A floating-point unit supporting rvf extension implemented by chisel
 
-Contents at a glance:
+![image-20230919132644356](.assets/top.png)
 
-* `.gitignore` - helps Git ignore junk like generated files, build products, and temporary files.
-* `build.sc` - instructs mill to build the Chisel project
-* `Makefile` - rules to call mill
-* `playground/src/GCD.scala` - GCD source file
-* `playground/src/DecoupledGCD.scala` - another GCD source file
-* `playground/src/Elaborate.scala` - wrapper file to call chisel command with the GCD module
-* `playground/test/src/GCDSpec.scala` - GCD tester
+## FMA
 
-Feel free to rename or delete files under `playground/` or use them as a reference/template.
+![image-20230919132700926](.assets/fma.png)
 
-## Getting Started
+## FCMP
 
-First, install mill by referring to the documentation [here](https://com-lihaoyi.github.io/mill).
+![image-20230919132711642](.assets/fcmp.png)
 
-To run all tests in this design (recommended for test-driven development):
-```bash
-make test
-```
+## FCONV
 
-To generate Verilog:
-```bash
-make verilog
-```
+![image-20230919132731827](.assets/fconv.png)
 
-## Change FIRRTL Compiler
+## FDIVSQRT
 
-You can change the FIRRTL compiler between SFC (Scala-based FIRRTL compiler) and
-MFC (MLIR-based FIRRTL compiler) by modifying the `useMFC` variable in `playground/src/Elaborate.scala`.
-The latter one requires `firtool`, which is included under `utils/`.
+> TBA, use gcc -mno-fdiv now.
